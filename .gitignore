@@ -2,7 +2,7 @@
 
 # dependencies
 node_modules/
-
+./PRD.png
 # Expo
 .expo/
 dist/

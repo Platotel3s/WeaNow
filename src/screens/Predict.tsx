@@ -1,10 +1,10 @@
 import { Text, View } from "react-native";
-import Container from "../layouts/Container";
+import Main from "../layouts/Main";
 
 export default function Predict(){
   return(
-    <Container>
+    <Main>
       <Text>Cari Prediksi Seminggu ke depan</Text>
-    </Container>
+    </Main>
   );
 }

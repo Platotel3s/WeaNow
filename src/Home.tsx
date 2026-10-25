@@ -1,10 +1,10 @@
-import { Text, View } from "react-native";
-import Containt from "./layouts/Container";
+import { Text } from "react-native";
+import Main from "./layouts/Main";
 
 export default function Home(){
   return(
-    <Containt>
-      <Text>halo, ini home</Text>
-    </Containt>
+    <Main>
+      <Text>Selamat datang di beranda</Text>
+    </Main>
   );
 }

@@ -37,6 +37,9 @@ const navigation=useNavigation<HomeScreenProp>();
 const getStarted=()=>{
   navigation.navigate('Home');
 }
+const testing=()=>{
+  navigation.navigate("Testing");
+}
 
 return(
   <View style={styling.canvas}>
@@ -54,7 +57,11 @@ return(
           <Text style={styling.subGet}>Get Started</Text>
           <AntDesign name="double-right" size={20} color="black" />
         </TouchableOpacity>
-        </View>
+        <TouchableOpacity style={styling.getStarted} onPress={testing} activeOpacity={0.8}>
+          <Text style={styling.subGet}>Testing Page</Text>
+          <AntDesign name="double-right" size={20} color="black" />
+        </TouchableOpacity>
+      </View>
     </SafeAreaView>
   </View>
 );

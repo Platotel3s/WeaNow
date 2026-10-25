@@ -3,9 +3,11 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 import { NavigationContainer } from "@react-navigation/native";
 import Home from "./src/Home";
 import Welcome from "./src/Welcome";
-import { TouchableOpacity } from "react-native";
+import { TouchableOpacity, View } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import Predict from "./src/screens/Predict";
+import City from "./src/screens/City";
+import Test from "./src/Test";
 
 
 export type RootNavigasi={
@@ -13,6 +15,7 @@ export type RootNavigasi={
   Home:undefined;
   City:undefined;
   Predict:undefined;
+  Testing:undefined;
 }
 
 const Stack=createStackNavigator<RootNavigasi>();
@@ -40,29 +43,22 @@ export default function App(){
         <Stack.Screen 
           name="Home"
           component={Home}
-          options={({navigation})=>({
-            title:'Home',
-            headerShown:true,
-            headerTintColor:'#fff',
-            headerTitleStyle:{
-              color:'#fff'
-            },
-            headerRight:()=>(
-              <TouchableOpacity
-                onPress={()=>navigation.navigate("Predict")}
-                style={{marginRight:16}}
-                hitSlop={10}
-              >
-                <Ionicons name="search-circle" size={32} color="#fff"/>
-              </TouchableOpacity>
-            ),
-          })}
+          options={{
+            headerShown:false
+          }}
         />
         <Stack.Screen
           name="Predict"
           component={Predict}
           options={{
-            title:'Prediction of Weather',
+            headerShown:false,
+          }}
+        />
+        <Stack.Screen
+          name="City"
+          component={City}
+          options={{
+            title:'Cari keterangan cuaca di kota tujuan',
             headerShown:true,
             headerTintColor:'#fff',
             headerTitleStyle:{
@@ -70,6 +66,13 @@ export default function App(){
               fontWeight:'bold',
               fontSize:20
             }
+          }}
+        />
+        <Stack.Screen
+          name="Testing"
+          component={Test}
+          options={{
+            headerShown:false
           }}
         />
         </Stack.Navigator>

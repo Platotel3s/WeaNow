@@ -1,25 +1,30 @@
-import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-import Welcome from '../Welcome';
-import Home from '../Home';
+import { Ionicons } from '@expo/vector-icons';
+import { StyleSheet, TouchableOpacity, View } from 'react-native';
 
-
-const Tab=createMaterialTopTabNavigator();
 export default function Navigation(){
   return(
-    <Tab.Navigator
-      initialRouteName='Welcome'
-      screenOptions={{
-        tabBarShowLabel:false,
-        tabBarStyle:{
-          height:0,
-          elevation:0,
-          shadowOpacity:0
-        },
-        swipeEnabled:true
-      }}
-    >
-      <Tab.Screen name='Welcome' component={Welcome}/>
-      <Tab.Screen name='Home' component={Home}/>
-    </Tab.Navigator>
+    <View style={styling.container}>
+      <TouchableOpacity>
+        <Ionicons name='home' size={28} color="#000000"/>
+      </TouchableOpacity>
+      <TouchableOpacity>
+        <Ionicons name='heart' size={28} color="#000000"/>
+      </TouchableOpacity>
+      <TouchableOpacity>
+        <Ionicons name='search' size={28} color="#000000"/>
+      </TouchableOpacity>
+      <TouchableOpacity>
+        <Ionicons name='settings' size={28} color="#000000"/>
+      </TouchableOpacity>
+      </View>
   );
 }
+
+const styling=StyleSheet.create({
+  container:{
+    flexDirection:'row',
+    justifyContent:'space-around',
+    gap:24,
+    width:'100%'
+  }
+});
